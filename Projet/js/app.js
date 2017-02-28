@@ -18,7 +18,7 @@ angular.module( 'BPD' )
             } )
     } ] );
 
-app.controller( 'BaltiController', [ '$http', function ( $http ) {
+app.controller( 'BaltiController', [ '$http','$scope', function ( $scope, $http ) {
     console.log( "BaltiController", $http );
     var ctrl = this;
     this.selected = 0;
@@ -28,6 +28,30 @@ app.controller( 'BaltiController', [ '$http', function ( $http ) {
         .success( function ( result ) {
             console.log( 'callback', this );
             console.log( result );
-            ctrl.arrests = result;
+            $scope.arrests = result;
         } );
 } ] );
+
+app.controller('pageBController',[
+'$scope','$routeParams',
+function($scope,$routeParams){
+	$scope.test1="du texte";
+	$scope.message=$routeParams.msg;
+	$routeParams.msg;
+	var products={
+		"product_1":{
+			"name":"phone",
+			"price":25.95
+		},
+		"product_2":{
+			"name":"gun",
+			"price":545.95
+		},
+		"product_3":{
+			"name":"Floppy",
+			"price":15.95
+		}
+	};
+	$scope.product=products[$routeParams.msg];
+}
+]);

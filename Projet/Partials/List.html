@@ -2,7 +2,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <div ng-repeat="arrest in balti.arrests" class="line">
+                    <div ng-repeat="arrest in BaltiController.arrests" class="line">
                         <div ng-show="arrest.chargedescription === 'FAILURE TO APPEAR'">
                             <h1>{{arrest.chargedescription}}</h1>
                             <h2>{{arrest.age}}</h2>
