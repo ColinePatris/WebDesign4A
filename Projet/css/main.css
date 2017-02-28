@@ -2,3 +2,9 @@
   background-color: #f00;
   color: #fff;
 }
+
+.banniere {
+  background-image:url(Vendors/Images/BaltiBlason.png);
+  background-repeat:no-repeat;
+  background-position: 50% 0%;
+}
