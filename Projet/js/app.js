@@ -10,11 +10,16 @@ angular.module( 'BPD' )
                 templateUrl: "Partials/List.html",
                 controller: 'BaltiController'
             } )
+<<<<<<< HEAD
 			.when( "/Home", {
                 templateUrl: "Partials/Home.html",
             } )
             .otherwise( {
                    	redirectTo: "Home"
+=======
+            .otherwise( {
+                   	redirectTo: "Stat"
+>>>>>>> origin/Experimental1.0
             } )
     } ] );
 
