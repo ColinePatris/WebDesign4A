@@ -1,6 +1,22 @@
-console.log( "init" );
-var app = angular.module( 'BPD', [] );
+var app = angular.module( 'BPD', ['ngRoute'] );
 
+angular.module( 'BPD' )
+    .config( [ '$routeProvider', function ( $routeProvider ) {
+        $routeProvider
+            .when( "/Stat", {
+                templateUrl: "Partials/Stat.html"
+            } )
+            .when( "/List", {
+                templateUrl: "Partials/List.html",
+                controller: 'BaltiController'
+            } )
+			.when( "/Home", {
+                templateUrl: "Partials/Home.html",
+            } )
+            .otherwise( {
+                   	redirectTo: "Home"
+            } )
+    } ] );
 
 app.controller( 'BaltiController', [ '$http', function ( $http ) {
     console.log( "BaltiController", $http );
