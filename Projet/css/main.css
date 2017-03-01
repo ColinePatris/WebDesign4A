@@ -4,7 +4,13 @@
 }
 
 .banniere {
-  background-image:url(Vendors/Images/BaltiBlason.png);
+  background-image:url("../Vendors/Images/BaltiBlason.png");
   background-repeat:no-repeat;
   background-position: 50% 0%;
+  width:224px;
+  height: 224px;
+}
+.row{
+  offset: 0px;
+  margin: 2px;
 }
