@@ -1,15 +1,16 @@
 <html ng-app="BPD2" xmlns="http://www.w3.org/1999/xhtml">
+
     <head>
-	    <link rel="stylesheet" href="/../Vendors/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="/../Vendors/bootstrap/bootstrap.css">
         <link rel="stylesheet" href="/../css/main.css">
 
         <script type="text/javascript" src="/../Vendors/angular/angular.js"></script>
         <script type="text/javascript" src="/../Vendors/angular/angular-route.js"></script>
         <script type="text/javascript" src="/../js/list.js"></script>
     </head>
-	
+
     <body ng-controller="BaltiController as balti">
-	<a href='#/Home'>&lt;&lt; Return</a><br/>
+        <a href='#/Home'>&lt;&lt; Return</a><br/> {{balti.selected}}
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -23,4 +24,5 @@
             </div>
         </div>
     </body>
-	</html>
+
+</html>
