@@ -17,8 +17,16 @@
     vertical-align: middle;
 }
 
-.center {
+.entete {
     line-height: 224px;
-    vertical-align: middle;
     text-align: center;
+    background-color: DarkBlue;
+}
+
+.center {
+    font-size: 50px;
+}
+
+.body {
+    background-color: DarkBlue;
 }
