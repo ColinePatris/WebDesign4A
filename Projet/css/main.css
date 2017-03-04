@@ -1,14 +1,10 @@
 .line {
-    background-color: #f00;
-    color: #fff;
+    border: solid 1px #000;
+    outline-offset: 15px;
 }
 
-.banniere {
-    background-image: url("../Vendors/Images/BaltiBlason.png");
-    background-repeat: no-repeat;
-    background-position: 50% 0%;
-    width: 224px;
-    height: 224px;
+.logo {
+    z-index: 2;
 }
 
 .row {
@@ -17,7 +13,7 @@
     vertical-align: middle;
 }
 
-.entete {
+.banniere {
     line-height: 224px;
     text-align: center;
     background-color: DarkBlue;
