@@ -16,13 +16,9 @@
 .banniere {
     line-height: 224px;
     text-align: center;
-    background-color: DarkBlue;
+    border-bottom: medium solid #5c6bc0;
 }
 
 .center {
     font-size: 50px;
-}
-
-.body {
-    background-color: DarkBlue;
 }
