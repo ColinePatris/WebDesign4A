@@ -1,4 +1,4 @@
-var app = angular.module( 'BPD', [ 'ngRoute' ] );
+var app = angular.module( 'BPD', [ 'ngRoute', 'chart.js' ] );
 
 angular.module( 'BPD' )
     .config( [ '$routeProvider', function ( $routeProvider ) {
