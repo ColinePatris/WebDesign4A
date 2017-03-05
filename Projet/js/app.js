@@ -14,7 +14,7 @@ angular.module( 'BPD' )
             } )
     } ] );
 
-app.controller( 'BaltiController', [ '$http', function ( $http ) {
+app.controller( 'BaltiController', [ '$scope', '$http', function ( $scope, $http ) {
     var ctrl = this;
     this.countSexF = 0;
     this.countSexM = 0;
@@ -75,10 +75,9 @@ app.controller( 'BaltiController', [ '$http', function ( $http ) {
             if ( ( value.sex == ctrl.gender || ctrl.gender == "" ) && ( ( value.age <= ctrl.ageMax && value.age >= ctrl.ageMin ) || ( ctrl.ageMin == 0 && ctrl.ageMax == 0 ) ) && ( value.race == ctrl.Race || ctrl.Race == "" ) && ( value.district == ctrl.District || ctrl.District == "" ) ) ctrl.arrests.push( value );
         } );
     }
+    $scope.labels = [ "Blehs", "In-Store Sales", "Mail-Order Sales" ];
+    $scope.data = [ 300, 500, 100 ];
 } ] );
 
 angular.module( "app", [ "chart.js" ] )
-    .controller( "PieCtrl", function ( $scope ) {
-        $scope.labels = [ "Download Sales", "In-Store Sales", "Mail-Order Sales" ];
-        $scope.data = [ 300, 500, 100 ];
-    } );
+    .controller( "PieCtrl", function ( $scope ) {} );
