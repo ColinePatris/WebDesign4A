@@ -1,12 +1,12 @@
 .row {
-    offset: 0px;
-    margin: 2px;
+    offset-top: 0px;
+    margin: 10px;
     vertical-align: middle;
 }
 
 .banniere {
     line-height: 224px;
     text-align: center;
-	font-size: 50px;
-	background-color:#5c6bc0;
+    font-size: 50px;
+    background-color: #5c6bc0;
 }
