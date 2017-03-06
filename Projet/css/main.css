@@ -5,20 +5,18 @@
 }
 
 .banniere {
-    line-height: 224px;
     text-align: center;
     font-size: 50px;
     background-color: #5c6bc0;
     color: #ffffff;
-    z-index: 2;
 }
 
 .pie {
     border: solid #5c6bc0 2px;
     background-color: #e8eaf6;
-    z-index: 2;
 }
 
 .list {
     border: solid #5c6bc0 2px;
+    font-size: 16px;
 }

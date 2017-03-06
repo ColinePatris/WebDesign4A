@@ -8,14 +8,10 @@
 <div class="container">
     <div class="pie">
         <div class="row">
-            <div class="col-md-offset-1 col-md-3">
-                <div class="list">
-                    <a href='#/Home'>&lt;&lt; Return</a><br/>
-                </div>
-            </div>
+            <a href='#/Home'class="list">&lt;&lt; Return</a><br/>
         </div>
         <div class="row">
-            <div class="line">
+            <div>
                 Sex:
                 <select>
 		<option ng-click="balti.sex('')"></option>
@@ -53,8 +49,8 @@
                 <button ng-click="balti.load()"> Search</button>
             </div>
             </br>
-            <div class="line">
-                <div ng-repeat="arrest in balti.arrests | limitTo:25 " class="line">
+            <div>
+                <div ng-repeat="arrest in balti.arrests | limitTo:25 " class="list">
                     Sex : {{arrest.sex}} Age :{{arrest.age}} Race : {{arrest.race}} Arrested at : {{arrest.arresttime}}</br>
                     District : {{arrest.district}} Location : {{arrest.name1}} </br>
                     Charged :{{arrest.chargedescription}}</br>
