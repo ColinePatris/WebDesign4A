@@ -14,8 +14,6 @@ angular.module( 'BPD' )
             } )
     } ] );
 
-angular.module( "app", [ "chart.js" ] )
-    .controller( "PieCtrl", function ( $scope ) {} );
 
 app.controller( 'BaltiController', [ '$scope', '$http', function ( $scope, $http ) {
     var ctrl = this;
@@ -78,6 +76,14 @@ app.controller( 'BaltiController', [ '$scope', '$http', function ( $scope, $http
             if ( ( value.sex == ctrl.gender || ctrl.gender == "" ) && ( ( value.age <= ctrl.ageMax && value.age >= ctrl.ageMin ) || ( ctrl.ageMin == 0 && ctrl.ageMax == 0 ) ) && ( value.race == ctrl.Race || ctrl.Race == "" ) && ( value.district == ctrl.District || ctrl.District == "" ) ) ctrl.arrests.push( value );
         } );
     }
-    $scope.labels = [ "Whites", "Blacks", "Asians", "Indians", "Unknown" ];
-    $scope.data = [ 50, 60, 70, 80, 90 ];
+    $scope.rLabels = [ "Whites", "Blacks", "Asians", "Indians", "Unknown" ];
+    $scope.rData = [ 50, 60, 70, 80, 90 ];
+    $scope.aLabels = [ "15-25", "26-35", "36-50", "51-65", "Above 65" ];
+    $scope.aData = [ 10, 15, 20, 25, 30 ];
+    $scope.sLabels = [ '' ];
+    $scope.sSeries = [ 'Female', 'Male' ];
+    $scope.sData = [
+        [ 205 ],
+        [ 105 ]
+    ];
 } ] );

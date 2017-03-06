@@ -1,16 +1,30 @@
 <span class="container">
             <div class="banniere">
 				<img src="Vendors/Images/BaltiBlason.png" style="width:224px;height:224px;">
-                Baltimore City Police Arrests Reports
+                Baltimore Police Department Arrests Reports
             </div>
 
     <div class="row">
         <a href='#/List'>Find Stuff</a><br/>
     </div>
-    <div class="row">
-        <div class="pie">
-            <canvas id="pie" class="chart chart-pie" chart-data="data"
-            chart-labels="labels" chart-options="options"></canvas>
+    <div>
+        <div class="row">
+          <div class="col-md-offset-3 col-md-6">
+            <canvas id="pie" class="chart chart-pie" chart-data="rData"
+            chart-labels="rLabels"></canvas>
+          </div>
+        </div>
+            <div class="row">
+              <div class="col-md-offset-3 col-md-6">
+            <canvas id="bar" class="chart chart-bar" chart-data="aData"
+            chart-labels="aLabels"></canvas>
+          </div>
+        </div>
+            <div class="row">
+              <div class="col-md-offset-3 col-md-6">
+            <canvas id="base" class="chart-horizontal-bar" chart-data="sData"
+            chart-series="sSeries" chart-labels="sLabels" ></canvas>
+          </div>
         </div>
     </div>
 </span>
