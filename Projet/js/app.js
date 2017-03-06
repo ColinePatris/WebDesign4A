@@ -19,6 +19,9 @@ app.controller( 'BaltiController', [ '$scope', '$http', function ( $scope, $http
     var ctrl = this;
     this.countSexF = 0;
     this.countSexM = 0;
+	this.sexArray=[[0],[0]];
+	this.ageArray=[0,0,0,0,0];
+	this.raceArray=[0,0,0,0,0];
     this.countRaceA = 0;
     this.countRaceB = 0;
     this.countRaceI = 0;
@@ -53,22 +56,32 @@ app.controller( 'BaltiController', [ '$scope', '$http', function ( $scope, $http
         .success( function ( result ) {
             ctrl.bufferArrests = result;
             ctrl.arrests = result;
+			angular.forEach( ctrl.bufferArrests, function ( value, key ) {
+			if ( value.sex == "F" ) ctrl.countSexF++;
+			if ( value.sex == "M" ) ctrl.countSexM++;
+			if ( value.race == "A" ) ctrl.countRaceA++;
+			if ( value.race == "B" ) ctrl.countRaceB++;
+			if ( value.race == "I" ) ctrl.countRaceI++;
+			if ( value.race == "U" ) ctrl.countRaceU++;
+			if ( value.race == "W" ) ctrl.countRaceW++;
+			if ( value.age <= 25 && value.age >= 15 ) ctrl.countAge1525++;
+			if ( value.age <= 35 && value.age >= 26 ) ctrl.countAge2635++;
+			if ( value.age <= 50 && value.age >= 36 ) ctrl.countAge3650++;
+			if ( value.age <= 65 && value.age >= 51 ) ctrl.countAge5165++;
+			if ( value.age >= 65 ) ctrl.countAge6500++;
+			} );
+			ctrl.sexArray=[[ctrl.countSexF],[ctrl.countSexM]];
+			ctrl.ageArray=[ctrl.countAge1525,ctrl.countAge2635,ctrl.countAge3650,ctrl.countAge5165,ctrl.countAge6500];
+			ctrl.raceArray=[ctrl.countRaceA,ctrl.countRaceB,ctrl.countRaceI,ctrl.countRaceU,ctrl.countRaceW];
+			console.log(ctrl.raceArray);
+    $scope.rLabels = [ "Asians", "Blacks",  "Indians", "Unknown","Whites" ];
+    $scope.rData = ctrl.raceArray;
+    $scope.aLabels = [ "15-25", "26-35", "36-50", "51-65", "Above 65" ];
+    $scope.aData = ctrl.ageArray;
+    $scope.sLabels = [ '' ];
+    $scope.sSeries = [ 'Female', 'Male' ];
+    $scope.sData = ctrl.sexArray;
         } );
-    angular.forEach( ctrl.bufferArrests, function ( value, key ) {
-        if ( value.sex == "F" ) ctrl.countSexF = ctrl.countSexF + 1;
-        if ( value.sex == "M" ) ctrl.countSexM = ctrl.countSexF + 1;
-        if ( value.race == "A" ) ctrl.countRaceA = ctrl.countRaceA + 1;
-        if ( value.race == "B" ) ctrl.countRaceB = ctrl.countRaceB + 1;
-        if ( value.race == "I" ) ctrl.countRaceI = ctrl.countRaceI + 1;
-        if ( value.race == "U" ) ctrl.countRaceU = ctrl.countRaceU + 1;
-        if ( value.race == "W" ) ctrl.countRaceW = ctrl.countRaceW + 1;
-        if ( value.age <= 25 && value.age >= 15 ) ctrl.countAge1525 = ctrl.countAge1525 + 1;
-        if ( value.age <= 35 && value.age >= 26 ) ctrl.countAge2635 = ctrl.countAge2635 + 1;
-        if ( value.age <= 50 && value.age >= 36 ) ctrl.countAge3650 = ctrl.countAge3650 + 1;
-        if ( value.age <= 65 && value.age >= 51 ) ctrl.countAge5165 = ctrl.countAge5165 + 1;
-        if ( value.age >= 65 ) ctrl.countAge6500 = ctrl.countAge6500 + 1;
-    } );
-
     this.load = function () {
         ctrl.arrests = [];
         if ( ctrl.gender == "" && ctrl.ageMin == 0 && ctrl.ageMax == 0 && ctrl.Race == "" && ctrl.District == "" ) ctrl.arrests = ctrl.bufferArrests;
@@ -76,16 +89,6 @@ app.controller( 'BaltiController', [ '$scope', '$http', function ( $scope, $http
             if ( ( value.sex == ctrl.gender || ctrl.gender == "" ) && ( ( value.age <= ctrl.ageMax && value.age >= ctrl.ageMin ) || ( ctrl.ageMin == 0 && ctrl.ageMax == 0 ) ) && ( value.race == ctrl.Race || ctrl.Race == "" ) && ( value.district == ctrl.District || ctrl.District == "" ) ) ctrl.arrests.push( value );
         } );
     }
-    $scope.rLabels = [ "Whites", "Blacks", "Asians", "Indians", "Unknown" ];
-    $scope.rData = [ 50, 60, 70, 80, 90 ];
-    $scope.aLabels = [ "15-25", "26-35", "36-50", "51-65", "Above 65" ];
-    $scope.aData = [ 10, 15, 20, 25, 30 ];
-    $scope.sLabels = [ '' ];
-    $scope.sSeries = [ 'Female', 'Male' ];
-    $scope.sData = [
-        [ 205 ],
-        [ 105 ]
-    ];
 
     this.goToList = function () {
         templateUrl: "Partials/List.html";
