@@ -17,6 +17,7 @@
     min-height: 50%;
     opacity: 0.2;
     content='';
+    z-index: -1;
 }
 
 .row {
@@ -34,5 +35,10 @@
 }
 
 .pie {
+    border: solid #5c6bc0 2px;
+    z-index: 2;
+}
+
+.list {
     border: solid #5c6bc0 2px;
 }
