@@ -1,3 +1,24 @@
+#bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+}
+
+#bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+    opacity: 0.2;
+    content='';
+}
+
 .row {
     offset-top: 0px;
     margin: 10px;
@@ -9,9 +30,9 @@
     text-align: center;
     font-size: 50px;
     background-color: #5c6bc0;
+    z-index: 2;
 }
 
 .pie {
-    width: 400px;
-    height: 400px;
+    border: solid #5c6bc0 2px;
 }
