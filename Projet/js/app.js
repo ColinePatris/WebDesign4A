@@ -86,4 +86,8 @@ app.controller( 'BaltiController', [ '$scope', '$http', function ( $scope, $http
         [ 205 ],
         [ 105 ]
     ];
+
+    this.goToList = function () {
+        templateUrl: "Partials/List.html";
+    }
 } ] );
