@@ -1,7 +1,7 @@
-var app = angular.module( 'BPD', [ 'ngRoute', 'chart.js' ] );
+var app = angular.module( "BPD", [ "ngRoute", "chart.js" ] );
 
-angular.module( 'BPD' )
-    .config( [ '$routeProvider', function ( $routeProvider ) {
+angular.module( "BPD" )
+    .config( [ "$routeProvider", function ( $routeProvider ) {
         $routeProvider
             .when( "/List", {
                 templateUrl: "Partials/List.html",
@@ -15,7 +15,7 @@ angular.module( 'BPD' )
     } ] );
 
 
-app.controller( 'BaltiController', [ '$scope', '$http', function ( $scope, $http ) {
+app.controller( "BaltiController", [ "$scope", "$http", function ( $scope, $http ) {
     var ctrl = this;
     this.countSexF = 0;
     this.countSexM = 0;
@@ -38,11 +38,11 @@ app.controller( 'BaltiController', [ '$scope', '$http', function ( $scope, $http
     this.countAge3650 = 0;
     this.countAge5165 = 0;
     this.countAge6500 = 0;
-    this.gender = '';
+    this.gender = "";
     this.ageMin = 0;
     this.ageMax = 0;
-    this.Race = '';
-    this.District = '';
+    this.Race = "";
+    this.District = "";
     this.arrests = [];
     this.bufferArrests = [];
     this.sex = function ( input ) {
@@ -58,7 +58,7 @@ app.controller( 'BaltiController', [ '$scope', '$http', function ( $scope, $http
     this.district = function ( input ) {
         ctrl.District = input;
     }
-    $http.get( 'https://data.baltimorecity.gov/resource/3i3v-ibrt.json' )
+    $http.get( "https://data.baltimorecity.gov/resource/3i3v-ibrt.json" )
         .success( function ( result ) {
             ctrl.bufferArrests = result;
             ctrl.arrests = result;
@@ -90,8 +90,8 @@ app.controller( 'BaltiController', [ '$scope', '$http', function ( $scope, $http
             $scope.sData = ctrl.sexArray;
             $scope.aLabels = [ "15-25 yo", "26-35 yo", "36-50 yo", "51-65 yo", "Above 65 yo" ];
             $scope.aData = ctrl.ageArray;
-            $scope.rLabels = [ '' ];
-            $scope.rSeries = [ 'Asians', 'Blacks', 'Indians', 'Unknown', 'Whites' ];
+            $scope.rLabels = [ "" ];
+            $scope.rSeries = [ "Asians", "Blacks", "Indians", "Unknown", "Whites" ];
             $scope.rData = ctrl.raceArray;
         } );
     this.load = function () {
