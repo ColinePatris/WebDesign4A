@@ -14,39 +14,39 @@
             <div>
                 Sex:
                 <select ng-model="selector">
-		                <option ng-click="balti.sex('')"></option>
-  		              <option ng-click="balti.sex('F')">Female</option>
-  		              <option ng-click="balti.sex('M')">Male</option>
+		                <option ng-click="balti.sex(''); clicked=true"></option>
+  		              <option ng-click="balti.sex('F'); clicked=true">Female</option>
+  		              <option ng-click="balti.sex('M'); clicked=true">Male</option>
 	              </select> Age:
                 <select ng-model="selector">
-		                <option ng-click="balti.age(0,0)"></option>
-  		              <option ng-click="balti.age(15,25)">15-25</option>
-  		              <option ng-click="balti.age(26,35)">26-35</option>
-  		              <option ng-click="balti.age(36,50)">36-50</option>
-  		              <option ng-click="balti.age(51,65)">51-65</option>
-  		              <option ng-click="balti.age(65,0)">65+</option>
+		                <option ng-click="balti.age(0,0); clicked=true"></option>
+  		              <option ng-click="balti.age(15,25); clicked=true">15-25</option>
+  		              <option ng-click="balti.age(26,35); clicked=true">26-35</option>
+  		              <option ng-click="balti.age(36,50); clicked=true">36-50</option>
+  		              <option ng-click="balti.age(51,65); clicked=true">51-65</option>
+  		              <option ng-click="balti.age(65,0); clicked=true">65+</option>
 	              </select> Race:
                 <select ng-model="selector">
-		                <option ng-click="balti.race('')"></option>
-                    <option ng-click="balti.race('A')">Asian</option>
-                    <option ng-click="balti.race('B')">Black</option>
-                    <option ng-click="balti.race('I')">Indian</option>
-                    <option ng-click="balti.race('U')">Unknown</option>
-                    <option ng-click="balti.race('W')">White</option>
+		                <option ng-click="balti.race(''); clicked=true"></option>
+                    <option ng-click="balti.race('A'); clicked=true">Asian</option>
+                    <option ng-click="balti.race('B'); clicked=true">Black</option>
+                    <option ng-click="balti.race('I'); clicked=true">Indian</option>
+                    <option ng-click="balti.race('U'); clicked=true">Unknown</option>
+                    <option ng-click="balti.race('W'); clicked=true">White</option>
 	              </select> District:
                 <select ng-model="selector">
-		                <option ng-click="balti.district('')"></option>
-                    <option ng-click="balti.district('Central')">Central</option>
-                    <option ng-click="balti.district('Eastern')">Eastern</option>
-                    <option ng-click="balti.district('Northeastern')">Northeastern</option>
-                    <option ng-click="balti.district('Northern')">Northern</option>
-                    <option ng-click="balti.district('Northwestern')">Northwestern</option>
-                    <option ng-click="balti.district('Southeastern')">Southeastern</option>
-                    <option ng-click="balti.district('Southern')">Southern</option>
-                    <option ng-click="balti.district('Southwestern')">Southwestern</option>
-                    <option ng-click="balti.district('Western')">Western</option>
+		                <option ng-click="balti.district(''); clicked=true"></option>
+                    <option ng-click="balti.district('Central'); clicked=true">Central</option>
+                    <option ng-click="balti.district('Eastern'); clicked=true">Eastern</option>
+                    <option ng-click="balti.district('Northeastern'); clicked=true">Northeastern</option>
+                    <option ng-click="balti.district('Northern'); clicked=true">Northern</option>
+                    <option ng-click="balti.district('Northwestern'); clicked=true">Northwestern</option>
+                    <option ng-click="balti.district('Southeastern'); clicked=true">Southeastern</option>
+                    <option ng-click="balti.district('Southern'); clicked=true">Southern</option>
+                    <option ng-click="balti.district('Southwestern'); clicked=true">Southwestern</option>
+                    <option ng-click="balti.district('Western'); clicked=true">Western</option>
 	              </select>
-                <button ng-click="balti.load()"> Search</button>
+                <button ng-show="clicked" ng-click="balti.load()"> Search</button>
             </div>
             </br>
             <div>

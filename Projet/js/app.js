@@ -19,12 +19,15 @@ app.controller( 'BaltiController', [ '$scope', '$http', function ( $scope, $http
     var ctrl = this;
     this.countSexF = 0;
     this.countSexM = 0;
-    this.sexArray = [
+    this.sexArray = [ 0, 0 ];
+    this.ageArray = [ 0, 0, 0, 0, 0 ];
+    this.raceArray = [
+        [ 0 ],
+        [ 0 ],
+        [ 0 ],
         [ 0 ],
         [ 0 ]
     ];
-    this.ageArray = [ 0, 0, 0, 0, 0 ];
-    this.raceArray = [ 0, 0, 0, 0, 0 ];
     this.countRaceA = 0;
     this.countRaceB = 0;
     this.countRaceI = 0;
@@ -97,9 +100,5 @@ app.controller( 'BaltiController', [ '$scope', '$http', function ( $scope, $http
         angular.forEach( ctrl.bufferArrests, function ( value, key ) {
             if ( ( value.sex == ctrl.gender || ctrl.gender == "" ) && ( ( value.age <= ctrl.ageMax && value.age >= ctrl.ageMin ) || ( ctrl.ageMin == 0 && ctrl.ageMax == 0 ) ) && ( value.race == ctrl.Race || ctrl.Race == "" ) && ( value.district == ctrl.District || ctrl.District == "" ) ) ctrl.arrests.push( value );
         } );
-    }
-
-    this.goToList = function () {
-        templateUrl: "Partials/List.html";
     }
 } ] );
