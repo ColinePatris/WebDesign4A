@@ -1,0 +1,61 @@
+<div>
+    <header>
+        <div class="banniere">
+            <img src="Vendors/Images/BaltiBlason.png" id="blason"> Baltimore Police Department Database
+        </div>
+    </header>
+</div>
+<div class="container">
+    <div class="pie">
+        <div class="row">
+            <a href="#/Home" ng-mouseover="isOver = true" ng-mouseout="isOver = false" class="link" ng-class="isOver : 'over'">&lt;&lt; Return</a><br/>
+        </div>
+        <div class="row">
+            <div>
+                Sex:
+                <select ng-model="selector">
+		                <option ng-click="balti.sex(''); clicked=true"></option>
+  		              <option ng-click="balti.sex('F'); clicked=true">Female</option>
+  		              <option ng-click="balti.sex('M'); clicked=true">Male</option>
+	              </select> Age:
+                <select ng-model="selector">
+		                <option ng-click="balti.age(0,0); clicked=true"></option>
+  		              <option ng-click="balti.age(15,25); clicked=true">15-25</option>
+  		              <option ng-click="balti.age(26,35); clicked=true">26-35</option>
+  		              <option ng-click="balti.age(36,50); clicked=true">36-50</option>
+  		              <option ng-click="balti.age(51,65); clicked=true">51-65</option>
+  		              <option ng-click="balti.age(65,1000); clicked=true">65+</option>
+	              </select> Race:
+                <select ng-model="selector">
+		                <option ng-click="balti.race(''); clicked=true"></option>
+                    <option ng-click="balti.race('A'); clicked=true">Asian</option>
+                    <option ng-click="balti.race('B'); clicked=true">Black</option>
+                    <option ng-click="balti.race('I'); clicked=true">Indian</option>
+                    <option ng-click="balti.race('U'); clicked=true">Unknown</option>
+                    <option ng-click="balti.race('W'); clicked=true">White</option>
+	              </select> District:
+                <select ng-model="selector">
+		                <option ng-click="balti.district(''); clicked=true"></option>
+                    <option ng-click="balti.district('Central'); clicked=true">Central</option>
+                    <option ng-click="balti.district('Eastern'); clicked=true">Eastern</option>
+                    <option ng-click="balti.district('Northeastern'); clicked=true">Northeastern</option>
+                    <option ng-click="balti.district('Northern'); clicked=true">Northern</option>
+                    <option ng-click="balti.district('Northwestern'); clicked=true">Northwestern</option>
+                    <option ng-click="balti.district('Southeastern'); clicked=true">Southeastern</option>
+                    <option ng-click="balti.district('Southern'); clicked=true">Southern</option>
+                    <option ng-click="balti.district('Southwestern'); clicked=true">Southwestern</option>
+                    <option ng-click="balti.district('Western'); clicked=true">Western</option>
+	              </select>
+                <button ng-show="clicked" ng-click="balti.load()"> Search</button>
+            </div>
+            </br>
+            <div>
+                <div ng-repeat="arrest in balti.arrests | limitTo:25 " class="list">
+                    Sex : {{arrest.sex}} Age :{{arrest.age}} Race : {{arrest.race}} Arrested at : {{arrest.arresttime}}</br>
+                    District : {{arrest.district}} Location : {{arrest.name1}} </br>
+                    Charged :{{arrest.chargedescription}}</br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

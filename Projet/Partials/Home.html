@@ -1,0 +1,39 @@
+<div>
+    <header>
+        <div class="banniere">
+            <img src="Vendors/Images/BaltiBlason.png" id="blason"> Baltimore Police Department Database
+        </div>
+    </header>
+</div>
+<div class="container">
+    <div class="pie">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-3">
+                <div class="Title">
+                    Sex repartition of arrests
+                </div>
+                </br>
+                <canvas id="pie" class="chart chart-pie" chart-caption="sCaption" chart-data="sData" chart-labels="sLabels"></canvas>
+            </div>
+            <div class="col-md-offset-1 col-md-6">
+                <div class="Title">
+                    Age repartition of arrests
+                </div>
+                </br>
+                <canvas id="pie" class="chart chart-bar" chart-data="aData" chart-labels="aLabels"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="Title">
+                    Race repartition of arrests
+                </div>
+                </br>
+                <canvas id="pie" class="chart-horizontal-bar" chart-data="rData" chart-series="rSeries" chart-labels="rLabels"></canvas>
+            </div>
+        </div>
+        <div class="row" align="right">
+            <a href="#/List" ng-mouseover="isOver = true" ng-mouseout="isOver = false" class="link" ng-class="isOver : 'over'">Go To Full List</a>
+        </div>
+    </div>
+</div>
