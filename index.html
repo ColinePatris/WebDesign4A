@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="BPD">
+
+    <head>
+        <title>BPD Database</title>
+
+        <style>
+        body {
+            background-image: url("Vendors/Images/USA.jpg");
+        }
+
+        </style>
+        <link rel="stylesheet" href="Vendors/Bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script type="text/javascript" src="Vendors/Angular/angular.js"></script>
+        <script type="text/javascript" src="Vendors/Angular/angular-route.js"></script>
+        <script type="text/javascript" src="Vendors/Chart/Chart.min.js"></script>
+        <script type="text/javascript" src="Vendors/Chart/Chart.js"></script>
+        <script type="text/javascript" src="Vendors/Angular/angular-chart.min.js"></script>
+        <script type="text/javascript" src="Vendors/Angular/angular-chart.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+
+    </head>
+
+    <body>
+        <div ng-controller="BaltiController as balti">
+            <div ng-view></div>
+        </div>
+    </body>
+
+</html>
