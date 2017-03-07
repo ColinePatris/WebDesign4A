@@ -1,24 +1,24 @@
 <div>
     <header>
         <div class="banniere">
-            <img src="Vendors/Images/BaltiBlason.png" style="width:224px;height:224px;"> Baltimore Police Department Database
+            <img src="Vendors/Images/BaltiBlason.png" id="blason"> Baltimore Police Department Database
         </div>
     </header>
 </div>
 <div class="container">
     <div class="pie">
         <div class="row">
-            <a href='#/Home' ng-mouseover="isOver = true" ng-mouseout="isOver = false" ng-class="isOver ? 'listOver' : 'list'">&lt;&lt; Return</a><br/>
+            <a href='#/Home' ng-mouseover="isOver = true" ng-mouseout="isOver = false" class="list" ng-class="isOver : 'over'">&lt;&lt; Return</a><br/>
         </div>
         <div class="row">
             <div>
                 Sex:
-                <select>
+                <select ng-model="selector">
 		                <option ng-click="balti.sex('')"></option>
   		              <option ng-click="balti.sex('F')">Female</option>
   		              <option ng-click="balti.sex('M')">Male</option>
 	              </select> Age:
-                <select>
+                <select ng-model="selector">
 		                <option ng-click="balti.age(0,0)"></option>
   		              <option ng-click="balti.age(15,25)">15-25</option>
   		              <option ng-click="balti.age(26,35)">26-35</option>
@@ -26,7 +26,7 @@
   		              <option ng-click="balti.age(51,65)">51-65</option>
   		              <option ng-click="balti.age(65,0)">65+</option>
 	              </select> Race:
-                <select>
+                <select ng-model="selector">
 		                <option ng-click="balti.race('')"></option>
                     <option ng-click="balti.race('A')">Asian</option>
                     <option ng-click="balti.race('B')">Black</option>
@@ -34,7 +34,7 @@
                     <option ng-click="balti.race('U')">Unknown</option>
                     <option ng-click="balti.race('W')">White</option>
 	              </select> District:
-                <select>
+                <select ng-model="selector">
 		                <option ng-click="balti.district('')"></option>
                     <option ng-click="balti.district('Central')">Central</option>
                     <option ng-click="balti.district('Eastern')">Eastern</option>
