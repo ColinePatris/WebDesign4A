@@ -8,7 +8,7 @@ Nous avons utilise la fonction ng-click dans la page List pour sélectionner les
 Nous avons egalement utilise une combinaison de ng-click et de ng-show pour n'afficher le bouton  permettant de lancer le calcul du filtre que lorsqu'un element a ete selectionne avec les combobox.
 Nous avons enfin utilise un ng-model sur les combobox afin de leur appliquer un style après que leur valeur ait ete modifiee.
 
-Nous avons utilise ng-class sur les liens permettant le passage d'une page a une autre pour changer leur apparence lorsque la sourie se trouve au-dessus.
+Nous avons utilise ng-class sur les liens permettant le passage d'une page a une autre pour changer leur apparence lorsque la souris se trouve au-dessus.
 
 Nous avons utilise ng-repeat pour afficher les valeurs concernant les differentes personnes concernees par les entrees du fichier Json.
 
@@ -22,3 +22,5 @@ Il n'y a pas de menu adapte pour les telephone car notre site ne comporte pas de
 La page http://www.google.com/design/spec/material-design/introduction.html a ete consultee et nous a servi a trouver les couleurs des differents elements ainsi qu'a gerer les ombres permettant de donner du volume aux pages. De même, les recommendations concernant les radius des bordures ont ete prises en compte.
 
 De facon a donner une identite au site, qui soit en rapport avec les donnees etudiees, un drapeau americain a ete place en arriere-plan et le blason de la Police Departementale de Baltimore a ete integre a la banniere.
+
+Bien que les combobox effacent la selection choisie lorsqu'on selectionne un autre parametre, les parametres selectionnes sont garde en memoire et le filtrage s'effectue correctement.
